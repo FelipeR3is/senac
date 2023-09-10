@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html 
+xmlns:th="https://thymeleaf.org" 
+xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Principal</title>
+    <!--  <link rel="stylesheet" href="estilo.css"> -->
+    <!-- link de importação do arquivo estilo.css-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        .menuLateral {
+            margin-top: 5px;
+            margin-left: -15px;
+        }
+
+        .tamanhoImg {
+            width: 150px;
+            height: 200px;
+        }
+    </style>
+
+
+</head>
+
+<body>
+
+
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <a class="navbar-brand" href="/administrativo"> <img style="border-radius: 10px;"
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKo-LrFz5RrXYnp4yhF4VY24jQLgxy6JmS7w&usqp=CAU"
+                alt="" width="30" height="30"> System oN tHe LiNe
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#conteudoNavbarSuportado"
+            aria-controls="conteudoNavbarSuportado" aria-expanded="false" aria-label="Alterna navegação">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="conteudoNavbarSuportado">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active"><a class="nav-link" href="/administrativo">Home
+                        <span class="sr-only">(página atual)</span>
+                    </a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Link</a></li>
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="search" placeholder="Pesquisar" aria-label="Pesquisar">
+                <button class="btn btn-ligth- my-2 my-sm-0" type="submit">Pesquisar</button>
+            </form>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h1>Listagem de Estados </h1>
+
+        <table id="tabela" class="table table-striped">
+            <!-- id="tabela" chama o plugin de configuração e busca de tabela do jquery-->
+
+            <thead class="bg-secondary table-dark">
+
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Nome</th>
+                    <th scope="col">Sigla</th>
+                    <th scope="col">Opções</th>
+                </tr>
+
+            </thead>
+
+            <tbody>
+
+                <tr th:each="estado: ${listaEstados}">
+     <td th:text="${estado.id}"></td>
+                    <td th:text="${estado.nome}"></td>
+                    <td th:text="${estado.sigla}"></td>
+                    <td colspan="2">
+                        <a th:href="@{/editarEstado/{id}(id=${estado.id})}" class="m-2"><i class="fa-solid fa-pen-to-square fa-2xl"
+                                style="color: #0f2edd;"></i></a>
+                        <!--parametro class="m-2" aumenta espaço entre os icones-->
+                        <a th:href="@{/removerEstado/{id}(id=${estado.id})}"><i class="fa-solid fa-trash fa-2xl" style="color: #f41a25;"></i></a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <a class="btn btn-danger" href="/administrativo"><i
+                class="fa-solid fa-right-from-bracket fa-rotate-180 fa-2xl"></i> Voltar </a>
+                
+        <a class="btn btn-primary" href="/cadastroEstado"><i class="fa-brands fa-wpforms fa-2xl"></i> Cadastro </a>
+
+
+    </div>
+
+
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+
+
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.css" />
+
+    <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            $('#tabela').DataTable();
+        });
+
+        var table = new DataTable('#tabela', {
+            language: {
+                url: '//cdn.datatables.net/plug-ins/1.13.4/i18n/pt-BR.json',
+            },
+        });
+
+    </script>
+
+
+
+
+</body>
+
+</html>

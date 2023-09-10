@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html 
+xmlns:th="https://thymeleaf.org" 
+xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+
+
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Principal</title>
+<!--  <link rel="stylesheet" href="estilo.css"> -->
+<!-- link de importação do arquivo estilo.css-->
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+	integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+	crossorigin="anonymous">
+
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<style>
+.menuLateral {
+	margin-top: 5px;
+	margin-left: -15px;
+}
+
+.tamanhoImg {
+	width: 150px;
+	height: 200px;
+}
+</style>
+
+</head>
+<body>
+
+	<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+		<a class="navbar-brand" href="#"> <img
+			style="border-radius: 10px;"
+			src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKo-LrFz5RrXYnp4yhF4VY24jQLgxy6JmS7w&usqp=CAU"
+			alt="" width="30" height="30"> System oN tHe LiNe
+		</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse"
+			data-target="#conteudoNavbarSuportado"
+			aria-controls="conteudoNavbarSuportado" aria-expanded="false"
+			aria-label="Alterna navegação">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+
+		<div class="collapse navbar-collapse" id="conteudoNavbarSuportado">
+			<ul class="navbar-nav mr-auto">
+				<li class="nav-item active"><a class="nav-link" href="#">Home
+						<span class="sr-only">(página atual)</span>
+				</a></li>
+				<li class="nav-item"><a class="nav-link" href="#">Link</a></li>
+			</ul>
+			<form class="form-inline my-2 my-lg-0">
+				<input class="form-control mr-sm-2" type="search"
+					placeholder="Pesquisar" aria-label="Pesquisar">
+				<button class="btn btn-ligth- my-2 my-sm-0" type="submit">Pesquisar</button>
+			</form>
+		</div>
+	</nav>
+
+	<div class="container-fluid">
+
+		<h1>SyS on tHe Line</h1>
+
+		<div class="row">
+			<div class="col-md-3 menuLateral">
+				<!--o parametro md depois do col serve para ficar responsivo e ajustar para tamanhos de tela diferente-->
+				<ul class="list-group">
+					<a href="#" class="list-group-item active"> <i class="fa-solid fa-gears fa-2xl"></i> FUNCIONALIDADES </a>
+					<a href="/cadastroVenda" class="list-group-item"> EFETUAR VENDAS </a>
+					<a href="/listarVenda" class="list-group-item"> VISUALIZAR VENDAS </a>
+					<a href="/cadastroEntrada" class="list-group-item"> ENTRADA DE PRODUTOS </a>
+					<a href="/listarEntrada" class="list-group-item"> VISUALIZAR ENTRADA DE PRODUTOS </a>
+
+					<a href="#" class="list-group-item active"> <i class="fa-solid fa-circle-plus fa-2xl"></i> CADASTROS </a>
+					<a href="/cadastroFornecedor" class="list-group-item"> CAD Fornecedores </a>
+					<a href="/cadastroFuncionario" class="list-group-item"> CAD Funcionarios </a>
+					<a href="/cadastroCliente" class="list-group-item"> CAD Clientes </a>
+					<a href="/cadastroProduto" class="list-group-item"> CAD Produtos </a>
+					<a href="/cadastroCidade" class="list-group-item"> CAD Cidades </a>
+					<a href="/cadastroEstado" class="list-group-item"> CAD Estados </a>
+
+					<a href="#" class="list-group-item active"> <i class="fa-solid fa-clipboard-list fa-2xl"></i> RELATÓRIOS </a>
+					<a href="/listarFornecedor" class="list-group-item"> Listar Fornecedores </a>
+					<a href="/listarFuncionario" class="list-group-item"> Listar Funcionarios </a>
+					<a href="/listarCliente" class="list-group-item"> Listar Clientes </a>
+					<a href="/listarProduto" class="list-group-item"> Listar Produtos </a>
+					<a href="/listarCidade" class="list-group-item"> Listar Cidades </a>
+					<a href="/listarEstado" class="list-group-item"> Listar Estados </a>
+				</ul>
+			</div>
+
+
+			<div class="col-md-9">
+
+				<div class="row">
+					<div class="col-md-3">
+						<div class="card" style="width: 18rem;">
+							<img class="card-img-top tamanhoImg" width="100px" height="200px"
+								src="https://cdn-icons-png.flaticon.com/512/779/779057.png"
+								alt="">
+							<div class="card-body">
+								<h5 class="card-title">Efetuar Venda</h5>
+								<a href="/cadastroVenda" class="btn btn-primary">Entrar</a>
+							</div>
+						</div>
+					</div>
+
+					<div class="col-md-3">
+						<div class="card" style="width: 18rem;">
+							<img class="card-img-top tamanhoImg"
+								src="https://thumbs.dreamstime.com/b/projeto-liso-da-ilustra%C3%A7%C3%A3o-do-vetor-do-estoque-do-%C3%ADcone-da-lista-de-verifica%C3%A7%C3%A3o-91137407.jpg"
+								alt="Imagem de capa do card">
+							<div class="card-body">
+								<h5 class="card-title">Visualizar Vendas</h5>
+
+								<a href="/listarVenda" class="btn btn-primary">Entrar</a>
+							</div>
+						</div>
+					</div>
+
+					<div class="col-md-3">
+						<div class="card" style="width: 18rem;">
+							<img class="card-img-top tamanhoImg"
+								src="https://cdn-icons-png.flaticon.com/128/3534/3534124.png"
+								alt="Imagem de capa do card">
+							<div class="card-body">
+								<h5 class="card-title">Cadastro de Clientes</h5>
+
+								<a href="/cadastroCliente" class="btn btn-primary">Entrar</a>
+							</div>
+						</div>
+					</div>
+
+					<div class="col-md-3">
+						<div class="card" style="width: 18rem;">
+							<img class="card-img-top tamanhoImg"
+								src="data:image/png;base64,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"
+								alt="Imagem de capa do card">
+							<div class="card-body">
+								<h5 class="card-title">Lista de Clentes</h5>
+
+								<a href="/listarCliente" class="btn btn-primary">Entrar</a>
+							</div>
+						</div>
+					</div>
+
+				</div>
+			</div>
+
+
+		</div>
+
+	</div>
+
+
+
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+		integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+		crossorigin="anonymous"></script>
+	<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+		integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+		crossorigin="anonymous"></script>
+	<script
+		src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+		integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+		crossorigin="anonymous"></script>
+
+
+</body>
+</html>
